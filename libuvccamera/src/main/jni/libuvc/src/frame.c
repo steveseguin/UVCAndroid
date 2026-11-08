@@ -597,8 +597,8 @@ uvc_error_t uvc_yuyv2rgbx(uvc_frame_t *in, uvc_frame_t *out) {
 }
 
 #define IYUYV2BGR_2(pyuv, pbgr, ax, bx) { \
-        const int d1 = (pyuv)[1]; \
-        const int d3 = (pyuv)[3]; \
+        const int d1 = (pyuv)[ax+1]; \
+        const int d3 = (pyuv)[ax+3]; \
         const int r = (22987 * (d3/*(pyuv)[3]*/ - 128)) >> 14; \
         const int g = (-5636 * (d1/*(pyuv)[1]*/ - 128) - 11698 * (d3/*(pyuv)[3]*/ - 128)) >> 14; \
         const int b = (29049 * (d1/*(pyuv)[1]*/ - 128)) >> 14; \
