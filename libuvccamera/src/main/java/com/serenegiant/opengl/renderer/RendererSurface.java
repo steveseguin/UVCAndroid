@@ -139,10 +139,10 @@ class RendererSurface {
 
         @Override
         public void draw(final GLDrawer2D drawer,
-                         final int textId, final float[] texMatrix) {
+                         final int textId, final float[] texMatrix, final float[] mvpMatrix) {
 
             mNextDraw = Time.nanoTime() + mIntervalsNs;
-            super.draw(drawer, textId, texMatrix);
+            super.draw(drawer, textId, texMatrix, mvpMatrix);
         }
     }
 
